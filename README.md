@@ -5,18 +5,27 @@ This project analyzes customer behavior using SQL, focusing on customer churn,
 retention between periods (2023 → 2024), repeat purchase patterns, and product
 performance by country.
 
-The goal is to demonstrate analytical SQL skills commonly required for
-Data Analyst, BI Analyst, and Business Analyst roles, with emphasis on
-business logic, metric definition, and clear reasoning.
+It applies common metrics used by product, marketing, and revenue teams to
+evaluate customer health and engagement.
 
 ---
 
 ## Business Questions Answered
 - Which customers are considered churned after 2023?
-- How many customers were retained from 2023 to 2024?
+- Which customers were retained from 2023 to 2024?
 - What is the customer retention rate for 2024?
 - How quickly do customers place a second order?
 - Which products perform best by country?
+
+---
+
+## Queries
+- Churned customers after 2023: `queries/01_churn_customers.sql`
+- Retained customers (2023 → 2024): `queries/02_retained_customers_2023_2024.sql`
+- Retention rate for 2024 (upcoming)
+- Repeat purchase within 30 days (upcoming)
+- Top products by country (upcoming)
+
 
 ---
 
@@ -32,7 +41,7 @@ The full schema definition is available in `schema/schema.sql`.
 ---
 
 ## Metrics Definitions
-- **Churned customer (after 2023)**: customer with at least one historical order
+- **Churned customer (after 2023)**: customer with at least one order historically
   and no orders after `2023-12-31`.
 - **Retained customer (2023 → 2024)**: customer with at least one order in 2023
   and at least one order in 2024.
