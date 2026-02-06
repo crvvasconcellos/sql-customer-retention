@@ -22,9 +22,10 @@ evaluate customer health and engagement.
 ## Queries
 - Churned customers after 2023: `queries/01_churn_customers.sql`
 - Retained customers (2023 → 2024): `queries/02_retained_customers_2023_2024.sql`
-- Retention rate for 2024 (upcoming)
-- Repeat purchase within 30 days (upcoming)
-- Top products by country (upcoming)
+- Retention rate for 2024: `queries/03_retention_rate_2024.sql`
+- Fast repeat purchase (second order within 30 days): `queries/04_repeat_purchase_within_30_days.sql`
+- Top product by country (by quantity): `queries/05_top_products_by_country.sql`
+
 
 
 ---
