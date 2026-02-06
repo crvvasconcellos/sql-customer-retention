@@ -1,33 +1,55 @@
-# Customer Retention & Repeat Purchase (SQLite)
+# Customer Retention & Repeat Purchase (SQL / SQLite)
 
-Goal
-Analyze customer behavior using SQL: churn logic, retention (2023→2024), repeat purchase speed, and top products by country.
+## Overview
+This project analyzes customer behavior using SQL, focusing on customer churn,
+retention between periods (2023 → 2024), repeat purchase patterns, and product
+performance by country.
 
-Dataset (SQLite)
-Tables:
+The goal is to demonstrate analytical SQL skills commonly required for
+Data Analyst, BI Analyst, and Business Analyst roles, with emphasis on
+business logic, metric definition, and clear reasoning.
 
-customers(customer_id, name, country, signup_date, age)
+---
 
-orders(order_id, customer_id, order_date, amount)
+## Business Questions Answered
+- Which customers are considered churned after 2023?
+- How many customers were retained from 2023 to 2024?
+- What is the customer retention rate for 2024?
+- How quickly do customers place a second order?
+- Which products perform best by country?
 
-order_items(order_item_id, order_id, product, quantity, item_amount)
+---
 
-Business Definitions
+## Database Schema
+The analysis uses a simplified transactional model:
 
-Churned customer (after 2023): customer with at least one order historically, and no orders after 2023-12-31.
+- **customers**: one row per customer  
+- **orders**: one row per order (1:N relationship with customers)  
+- **order_items**: line items per order (1:N relationship with orders)
 
-Retained customer (2023→2024): customer with ≥1 order in 2023 and ≥1 order in 2024.
+The full schema definition is available in `schema/schema.sql`.
 
-Retention rate 2024: retained customers / customers who purchased in 2023.
+---
 
-Fast return: second order happened within 30 days of the first order.
+## Metrics Definitions
+- **Churned customer (after 2023)**: customer with at least one historical order
+  and no orders after `2023-12-31`.
+- **Retained customer (2023 → 2024)**: customer with at least one order in 2023
+  and at least one order in 2024.
+- **Retention rate 2024**: retained customers divided by customers who purchased
+  in 2023.
+- **Fast repeat purchase**: second order placed within 30 days of the first order.
 
-## Business Impact
-This analysis helps understand customer behavior across time, identifying churn, retention, and repeat purchase patterns.
-These metrics are commonly used by product, marketing, and revenue teams to evaluate customer health and engagement.
+---
 
 ## Skills Demonstrated
-- Analytical SQL (CTEs, EXISTS / NOT EXISTS, window functions)
-- Customer retention and churn analysis
-- Time-based metrics and cohort-style logic
-- Clear business definitions and metric validation
+- Analytical SQL for behavioral analysis (EXISTS / NOT EXISTS, CTEs)
+- Time-based customer metrics (churn, retention, repeat purchase)
+- Window functions for sequence and interval analysis
+- Business-oriented metric definition and validation
+
+---
+
+## Notes
+- Data is modeled for analytical demonstration purposes.
+- The focus is on correctness, clarity, and business reasoning rather than data volume.
