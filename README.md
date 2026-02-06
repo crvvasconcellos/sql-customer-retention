@@ -21,3 +21,13 @@ Retained customer (2023→2024): customer with ≥1 order in 2023 and ≥1 order
 Retention rate 2024: retained customers / customers who purchased in 2023.
 
 Fast return: second order happened within 30 days of the first order.
+
+## Business Impact
+This analysis helps understand customer behavior across time, identifying churn, retention, and repeat purchase patterns.
+These metrics are commonly used by product, marketing, and revenue teams to evaluate customer health and engagement.
+
+## Skills Demonstrated
+- Analytical SQL (CTEs, EXISTS / NOT EXISTS, window functions)
+- Customer retention and churn analysis
+- Time-based metrics and cohort-style logic
+- Clear business definitions and metric validation
