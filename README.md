@@ -1,4 +1,4 @@
-Customer Retention & Repeat Purchase (SQLite)
+# Customer Retention & Repeat Purchase (SQLite)
 
 Goal
 Analyze customer behavior using SQL: churn logic, retention (2023→2024), repeat purchase speed, and top products by country.
