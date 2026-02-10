@@ -16,7 +16,7 @@ evaluate customer health and engagement.
 - What is the customer retention rate for 2024?
 - How quickly do customers place a second order?
 - Which products perform best by country?
-
+- How many customers remain active in the months following their first purchase?
 ---
 
 ## Queries
@@ -25,7 +25,7 @@ evaluate customer health and engagement.
 - Retention rate for 2024: `queries/03_retention_rate_2024.sql`
 - Fast repeat purchase (second order within 30 days): `queries/04_repeat_purchase_within_30_days.sql`
 - Top product by country (by quantity): `queries/05_top_products_by_country.sql`
-
+- Monthly cohort retention (cohort month + month index + retention rate): `queries/06_monthly_cohort_retention.sql`
 
 
 ---
@@ -49,7 +49,9 @@ The full schema definition is available in `schema/schema.sql`.
 - **Retention rate 2024**: retained customers divided by customers who purchased
   in 2023.
 - **Fast repeat purchase**: second order placed within 30 days of the first order.
-
+- **Cohort month**: month of customer’s first order (truncated to month)
+- **Active customer (monthly)**: customer with at least one order in a month
+- **Monthly retention rate**: active_customers / cohort_size for each cohort_month and month_index
 ---
 
 ## Skills Demonstrated
