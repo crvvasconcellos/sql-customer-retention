@@ -17,6 +17,9 @@ evaluate customer health and engagement.
 - How quickly do customers place a second order?
 - Which products perform best by country?
 - How many customers remain active in the months following their first purchase?
+- What percentage of customers progress from first to second and third purchases?
+- What are the conversion rates between purchase stages?
+- What is the average time between consecutive purchases?
 ---
 
 ## Queries
@@ -26,7 +29,7 @@ evaluate customer health and engagement.
 - Fast repeat purchase (second order within 30 days): `queries/04_repeat_purchase_within_30_days.sql`
 - Top product by country (by quantity): `queries/05_top_products_by_country.sql`
 - Monthly cohort retention (cohort month + month index + retention rate): `queries/06_monthly_cohort_retention.sql`
-
+- Repeat purchase funnel & time between orders: `queries/07_repeat_purchase_funnel.sql`
 
 ---
 
@@ -52,6 +55,13 @@ The full schema definition is available in `schema/schema.sql`.
 - **Cohort month**: month of customer’s first order (truncated to month)
 - **Active customer (monthly)**: customer with at least one order in a month
 - **Monthly retention rate**: active_customers / cohort_size for each cohort_month and month_index
+- **Customers 1+**: total number of customers with at least one order.
+- **Customers 2+**: customers with a second recorded order.
+- **Customers 3+**: customers with a third recorded order.
+- **Conversion to 2nd order (%)**: customers_2plus / customers_1plus.
+- **Conversion to 3rd order (%)**: customers_3plus / customers_2plus.
+- **Average days 1→2**: average number of days between first and second order.
+- **Average days 2→3**: average number of days between second and third order.
 ---
 
 ## Skills Demonstrated
